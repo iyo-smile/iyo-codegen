@@ -4,7 +4,7 @@ import com.google.auto.service.AutoService;
 import org.iyo.codegen.processor.BaseCodeGenProcessor;
 import org.iyo.codegen.spi.CodeGenProcessor;
 import com.squareup.javapoet.MethodSpec;
-import com.squareup.javapoet.TypeName;
+
 import com.squareup.javapoet.TypeSpec;
 import com.squareup.javapoet.TypeSpec.Builder;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -22,6 +22,7 @@ import lombok.Data;
  * @Date:2024/4/10 8:09
  * @Description:
  */
+// AutoService注册注解处理器
 @AutoService(value = CodeGenProcessor.class)
 public class DtoCodeGenProcessor extends BaseCodeGenProcessor{
 
@@ -42,6 +43,7 @@ public class DtoCodeGenProcessor extends BaseCodeGenProcessor{
         Set<VariableElement> fields = findFields(typeElement,
                 ve -> Objects.isNull(ve.getAnnotation(IgnoreDto.class)));
         String className = typeElement.getSimpleName() + SUFFIX;
+        System.out.println("开始创建Class: "+className);
         Builder builder = TypeSpec.classBuilder(className)
                 .addModifiers(Modifier.PUBLIC)
                 .addAnnotation(Schema.class)

@@ -1,11 +1,13 @@
-package org.iyo.codegen.test;
+package org.iyo.codegen.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
+// import com.baomidou.mybatisplus.annotation.IdType;
+// import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.iyo.codegen.processor.dto.GenDto;
 import org.iyo.codegen.processor.dto.IgnoreDto;
+import org.iyo.codegen.processor.dto.TestAnnotation;
+import org.iyo.codegen.processor.dto.TestAnnotationNotUse;
 
 import java.io.Serializable;
 
@@ -17,10 +19,12 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @GenDto(pkgName = "org.iyo.codegen.dto")
+@TestAnnotation
+@TestAnnotationNotUse
 public class User implements Serializable {
     public static final long serialVersionUID=1L;
 
-    @TableId(value = "id",type = IdType.AUTO)
+    // @TableId(value = "id",type = IdType.AUTO)
     private Integer id;
     private String userName;
 

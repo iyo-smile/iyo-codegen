@@ -35,21 +35,21 @@
             <artifactId>swagger-annotations</artifactId>
             <version>2.2.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct</artifactId>
-            <version>1.3.1.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.4.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>31.0.1-jre</version>
-        </dependency>
+        <!--<dependency>-->
+        <!--    <groupId>org.mapstruct</groupId>-->
+        <!--    <artifactId>mapstruct</artifactId>-->
+        <!--    <version>1.3.1.Final</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--    <groupId>com.baomidou</groupId>-->
+        <!--    <artifactId>mybatis-plus-boot-starter</artifactId>-->
+        <!--    <version>3.4.2</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+        <!--    <groupId>com.google.guava</groupId>-->
+        <!--    <artifactId>guava</artifactId>-->
+        <!--    <version>31.0.1-jre</version>-->
+        <!--</dependency>-->
     </dependencies>
     <build>
         <plugins>

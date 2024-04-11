@@ -47,6 +47,7 @@ public class CodeGenProcessorRegistry {
             CodeGenProcessor next = iterator.next();
             Class<? extends Annotation> annotation = next.getAnnotation();
             map.put(annotation.getName(), next);
+            System.out.println("CodeGenProcessorRegistry spi: "+annotation.getName());
         }
         PROCESSORS = map;
     }

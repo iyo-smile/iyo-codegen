@@ -16,15 +16,17 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.ElementFilter;
 import javax.tools.Diagnostic.Kind;
 
-@AutoService(Processor.class)
+@AutoService(value = Processor.class)
 public class Only4PlayCodeGenProcessor extends AbstractProcessor {
 
   @Override
   public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
     annotations.stream().forEach(an -> {
+      System.out.println("Only4PlayCodeGenProcessor.process:" + an.getQualifiedName());
       Set<? extends Element> typeElements = roundEnv.getElementsAnnotatedWith(an);
       Set<TypeElement> types = ElementFilter.typesIn(typeElements);
       for (TypeElement typeElement : types){
+        System.out.println("Only4PlayCodeGenProcessor.typeElement:"+typeElement.getQualifiedName());
         CodeGenProcessor codeGenProcessor = CodeGenProcessorRegistry.find(
             an.getQualifiedName().toString());
         try {
